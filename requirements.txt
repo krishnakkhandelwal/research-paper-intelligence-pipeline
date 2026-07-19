@@ -1,0 +1,23 @@
+# --- Phase 1: ingestion & parsing ---
+PyMuPDF==1.24.9
+pdfplumber==0.11.4
+camelot-py[cv]==0.11.0
+opencv-python-headless==4.10.0.84
+pytesseract==0.3.13
+Pillow==10.4.0
+python-dotenv==1.0.1
+
+# --- Phase 2: enrichment, embeddings, storage ---
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0.post1
+SQLAlchemy==2.0.34
+openai==1.43.0
+numpy==1.26.4
+
+# --- Phase 3: API & dashboard ---
+fastapi==0.112.2
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pydantic==2.8.2
+streamlit==1.38.0
+requests==2.32.3

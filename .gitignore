@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+
+# Environment
+.env
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Generated outputs
+data/raw/*
+data/processed/*
+data/tables/*
+data/figures/*
+
+# Keep empty folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/tables/.gitkeep
+!data/figures/.gitkeep
+
+# Databases
+*.db
+faiss_index/
+
+.ipynb_checkpoints/
