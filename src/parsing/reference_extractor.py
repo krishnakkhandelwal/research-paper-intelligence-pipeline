@@ -24,8 +24,11 @@ def extract_references(references_text: str, paper_id: str = "") -> List[Referen
     if not references_text.strip():
         return []
 
-    # Split on entry markers like "[1] " or "1. " at the start of a line
-    raw_entries = re.split(r"\n(?=\[?\d+\]?\.?\s)", references_text.strip())
+    # Split on entry markers like "[1]" or "[12]" wherever they appear —
+    # not just at the start of a line. Section text may or may not retain
+    # original line breaks depending on how upstream parsing joined it, so
+    # this is more robust than a newline-anchored split.
+    raw_entries = re.split(r"(?=\[\d+\])", references_text.strip())
     refs: List[Reference] = []
 
     for entry in raw_entries:
