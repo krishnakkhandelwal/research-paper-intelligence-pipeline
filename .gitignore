@@ -29,3 +29,6 @@ data/figures/*
 faiss_index/
 
 .ipynb_checkpoints/
+# Phase 2 generated stores
+data/faiss_index*
+*.bin
