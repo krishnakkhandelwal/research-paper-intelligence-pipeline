@@ -24,8 +24,9 @@ from src.utils.logger import get_logger
 logger = get_logger("phase1_demo")
 
 
-def run_phase1(pdf_path: str) -> PaperSchema:
-    paper_id = f"paper_{uuid.uuid4().hex[:8]}"
+def run_phase1(pdf_path: str, paper_id: str = None) -> PaperSchema:
+    # Phase 2 passes a content-hash based id so re-running the same PDF is idempotent.
+    paper_id = paper_id or f"paper_{uuid.uuid4().hex[:8]}"
     logger.info(f"Processing '{pdf_path}' as paper_id='{paper_id}'")
 
     # 1. Ingest
